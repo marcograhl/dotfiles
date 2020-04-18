@@ -1,0 +1,17 @@
+[user]
+name = Issy Long
+email = me@issyl0.co.uk
+signingkey = D7A02ABD000655457AECAF6A8247C390DADC67D4
+
+[core]
+editor = /usr/bin/vim
+excludesfile = ~/repos/dotfiles/.gitignore_global
+
+[commit]
+verbose = true
+gpgsign = true
+
+[rebase]
+autostash = true
+autosquash = true
+
