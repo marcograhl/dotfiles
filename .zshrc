@@ -1,10 +1,6 @@
 export RBENV_ROOT="$HOME/.rbenv"
 export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$HOME/bin:/usr/local/bin:$PATH
-
-export RBENV_ROOT="$HOME/.rbenv"
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$HOME/.cargo/bin:$PATH
 
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
@@ -20,6 +16,11 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
 
 alias cat=bat
+alias bef="brew edit"
+alias bisf="brew install -s"
+alias bibf="brew install --force-bottle"
+alias brf="brew reinstall"
+alias btf="brew test"
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -29,6 +30,7 @@ if type brew &>/dev/null; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(rbenv init -)"
 
 autoload -U promptinit; promptinit
 prompt spaceship
