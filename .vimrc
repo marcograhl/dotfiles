@@ -1,20 +1,31 @@
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
+  Plug 'airblade/vim-gitgutter'
 
-Plug 'mileszs/ack.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+  Plug 'dense-analysis/ale'
 
-Plug 'vim-airline/vim-airline'
-Plug 'airblade/vim-gitgutter'
+  Plug 'ervandew/supertab'
 
-Plug 'tpope/vim-rhubarb'
-Plug 'dense-analysis/ale'
-Plug 'hashivim/vim-terraform'
-Plug 'juliosueiras/vim-terraform-completion'
-Plug 'rhysd/vim-crystal'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+  Plug 'hashivim/vim-terraform'
+
+  Plug 'juliosueiras/vim-terraform-completion'
+  Plug 'jremmen/vim-ripgrep'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
+
+  Plug 'rhysd/vim-crystal'
+  Plug 'rust-lang/rust.vim'
+
+  Plug 'tpope/vim-endwise'
+  Plug 'tpope/vim-sensible'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-rhubarb'
+  Plug 'tpope/vim-surround'
+
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
 syntax on
@@ -39,7 +50,7 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 noremap <c-p> :FZF<cr>
 
-nmap <leader>f :set hlsearch<cr>:Ack!<space>
+nmap <leader>f :set hlsearch<cr>:Rg<space>
 
 set background=dark
 set tabstop=2
