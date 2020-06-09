@@ -1,0 +1,27 @@
+prompt_order = [
+    "username",
+    "hostname",
+    "directory",
+    "git_branch",
+    "ruby",
+    "rust",
+    "terraform",
+    "line_break",
+    "character",
+]
+
+[character]
+symbol = "➜"
+
+[username]
+show_always = true
+
+[hostname]
+ssh_only = false
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+
+[git_branch]
+symbol = ""

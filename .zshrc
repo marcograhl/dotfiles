@@ -36,15 +36,4 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(rbenv init -)"
 
-autoload -U promptinit; promptinit
-prompt spaceship
-SPACESHIP_PROMPT_ORDER=(user host dir git line_sep char)
-SPACESHIP_USER_SHOW=always
-SPACESHIP_HOST_SHOW=always
-SPACESHIP_DIR_TRUNC_REPO=false
-SPACESHIP_DIR_TRUNC=0
-SPACESHIP_GIT_PREFIX="on"
-SPACESHIP_GIT_BRANCH_PREFIX=" "
-SPACESHIP_GIT_BRANCH_SUFFIX=""
-SPACESHIP_GIT_STATUS_SHOW=false
-SPACESHIP_CHAR_SYMBOL="➜ "
+eval "$(starship init zsh)"
