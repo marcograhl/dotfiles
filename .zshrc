@@ -14,6 +14,7 @@ export HOMEBREW_DEVELOPER=1
 export HOMEBREW_GITHUB_USER=issyl0
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_SORBET=1
 
 bindkey "^A" vi-beginning-of-line
 bindkey "^E" vi-end-of-line
