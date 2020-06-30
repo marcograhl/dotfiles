@@ -25,7 +25,6 @@ alias bisf="brew install -s"
 alias bibf="brew install --force-bottle"
 alias brf="brew reinstall"
 alias btf="brew test"
-alias vim="code"
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
