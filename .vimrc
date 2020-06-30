@@ -1,29 +1,24 @@
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
-
   Plug 'dense-analysis/ale'
-
   Plug 'ervandew/supertab'
-
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
   Plug 'hashivim/vim-terraform'
-
   Plug 'juliosueiras/vim-terraform-completion'
   Plug 'jremmen/vim-ripgrep'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-
+  Plug 'miyakogi/conoline.vim'
   Plug 'rhysd/vim-crystal'
   Plug 'rust-lang/rust.vim'
-
-  Plug 'tpope/vim-endwise'
-  Plug 'tpope/vim-sensible'
+  Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-endwise'
+  Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-rhubarb'
+  Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-surround'
-
   Plug 'vim-airline/vim-airline'
   Plug 'vim-ruby/vim-ruby'
 call plug#end()
@@ -51,6 +46,7 @@ noremap <Right> <NOP>
 noremap <c-p> :FZF<cr>
 
 nmap <leader>f :set hlsearch<cr>:Rg<space>
+nmap <leader>n :NERDTreeToggle<CR>
 
 set background=dark
 set tabstop=2
@@ -60,6 +56,7 @@ set expandtab
 set shiftwidth=2
 set autoindent
 set number
+set completeopt=longest,menuone
 set showcmd
 set ruler
 set wildmenu
