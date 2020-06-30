@@ -65,5 +65,5 @@ set lazyredraw
 set showmatch
 set incsearch
 set hlsearch
-set textwidth=70
+set textwidth=80
 
