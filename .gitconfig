@@ -1,23 +1,28 @@
-[user]
-name = Issy Long
-email = me@issyl0.co.uk
-signingkey = D7A02ABD000655457AECAF6A8247C390DADC67D4
-
-[credential]
-helper = osxkeychain
+[commit]
+verbose = true
+gpgsign = true
 
 [core]
 editor = /usr/bin/vim
 excludesfile = ~/repos/dotfiles/.gitignore_global
 
-[commit]
-verbose = true
-gpgsign = true
+[credential]
+helper = osxkeychain
 
 [github]
 user = issyl0
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = false
 
 [rebase]
 autostash = true
 autosquash = true
 
+[user]
+name = Issy Long
+email = me@issyl0.co.uk
+signingkey = D7A02ABD000655457AECAF6A8247C390DADC67D4
