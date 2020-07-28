@@ -30,6 +30,7 @@ let mapleader=","
 let g:terraform_fmt_on_save=1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_set_highlights=0
+let g:go_version_warning = 0
 
 autocmd BufRead,BufNewFile ~/repos/book-reproductions.fun/*/*.md setlocal spell
 autocmd BufRead,BufNewFile ~/repos/book-reproductions.fun/*/*.md setlocal spell spelllang=fr
