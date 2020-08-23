@@ -1,10 +1,8 @@
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
-  Plug 'dense-analysis/ale'
   Plug 'ervandew/supertab'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'hashivim/vim-terraform'
-  Plug 'juliosueiras/vim-terraform-completion'
   Plug 'jremmen/vim-ripgrep'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
@@ -28,12 +26,6 @@ syntax on
 let mapleader=","
 
 let g:terraform_fmt_on_save=1
-let g:airline#extensions#ale#enabled = 1
-let g:ale_set_highlights=0
-let g:go_version_warning = 0
-
-autocmd BufRead,BufNewFile ~/repos/book-reproductions.fun/*/*.md setlocal spell
-autocmd BufRead,BufNewFile ~/repos/book-reproductions.fun/*/*.md setlocal spell spelllang=fr
 
 augroup RemoveSpaces
   autocmd!

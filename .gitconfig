@@ -3,8 +3,8 @@ verbose = true
 gpgsign = true
 
 [core]
-editor = /usr/bin/vim
-excludesfile = ~/repos/dotfiles/.gitignore_global
+editor = vim
+excludesfile = ~/.dotfiles/.gitignore_global
 
 [credential]
 helper = osxkeychain
