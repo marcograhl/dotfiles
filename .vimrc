@@ -46,7 +46,7 @@ nmap <Leader>r :NERDTreeFocus<cr> \| R
 
 set background=dark
 set tabstop=2
-set noerrorbells
+set belloff=all
 set softtabstop=2
 set expandtab
 set shiftwidth=2
