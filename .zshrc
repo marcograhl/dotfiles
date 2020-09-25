@@ -19,13 +19,15 @@ export HOMEBREW_SORBET=1
 bindkey "^A" vi-beginning-of-line
 bindkey "^E" vi-end-of-line
 
-alias cat=bat
+alias ack=rg
+alias ag=rg
 alias bef="brew edit"
 alias bisf="brew install -s"
 alias bibf="brew install --force-bottle"
 alias brf="brew reinstall"
 alias btf="brew test"
 alias bx="bundle exec"
+alias cat=bat
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
