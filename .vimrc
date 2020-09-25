@@ -1,8 +1,10 @@
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
+  Plug 'arcticicestudio/nord-vim'
   Plug 'ervandew/supertab'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'hashivim/vim-terraform'
+  Plug 'jacoborus/tender.vim'
   Plug 'jremmen/vim-ripgrep'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
@@ -20,6 +22,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-ruby/vim-ruby'
+  Plug 'wadackel/vim-dogrun'
 call plug#end()
 
 syntax on
@@ -40,9 +43,17 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 noremap <c-p> :FZF<cr>
 
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Wq wq
+cnoreabbrev WQ wq
+
 nmap <leader>f :set hlsearch<cr>:Rg<space>
 nmap <leader>n :NERDTreeToggle<CR>
 nmap <Leader>r :NERDTreeFocus<cr> \| R
+
+colorscheme nord
+let g:lightline_theme = 'nord'
 
 set background=dark
 set tabstop=2
