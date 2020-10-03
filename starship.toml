@@ -1,17 +1,18 @@
-prompt_order = [
-    "username",
-    "hostname",
-    "directory",
-    "git_branch",
-    "ruby",
-    "rust",
-    "terraform",
-    "line_break",
-    "character",
-]
+format = """\
+  $username\
+  $hostname\
+  $directory\
+  $git_branch\
+  $ruby\
+  $rust\
+  $terraform\
+  $line_break\
+  $character\
+  """
 
 [character]
-symbol = "➜"
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
 
 [username]
 show_always = true
