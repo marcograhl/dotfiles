@@ -8,3 +8,4 @@ node_modules
 _book
 .vscode
 *.tfstate*
+__latexindent*.tex
