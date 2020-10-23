@@ -31,7 +31,6 @@ let mapleader=","
 
 let g:coc_global_extensions=['coc-emoji', 'coc-eslint', 'coc-prettier', 'coc-solargraph', 'coc-yaml', 'coc-sh', 'coc-go', 'coc-git', 'coc-fzf-preview', 'coc-rls', 'coc-spell-checker', 'coc-sql', 'coc-texlab', 'coc-graphql' ]
 let g:terraform_fmt_on_save=1
-let g:NERDTreeWinPos = "right"
 
 augroup RemoveSpaces
   autocmd!
