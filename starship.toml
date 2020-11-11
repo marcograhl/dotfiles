@@ -1,20 +1,13 @@
-add_newline = false
-
-format = """\
-  $username\
-  $hostname\
-  $directory\
-  $git_branch\
-  $ruby\
-  $rust\
-  $terraform\
-  $line_break\
-  $character\
-  """
-
-[character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[➜](bold red)"
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$ruby\
+$rust\
+$terraform\
+$line_break\
+$character"""
 
 [username]
 show_always = true
