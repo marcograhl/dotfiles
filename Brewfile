@@ -3,7 +3,6 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "heroku/brew"
 
 brew "awscli"
 brew "bat"
