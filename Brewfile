@@ -5,6 +5,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 
 brew "awscli"
+brew "az"
 brew "bat"
 brew "coreutils"
 brew "gh"
