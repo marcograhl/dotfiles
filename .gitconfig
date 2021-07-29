@@ -4,7 +4,7 @@ gpgsign = true
 
 [core]
 editor = vim
-excludesfile = ~/.dotfiles/.gitignore_global
+excludesfile = ~/.gitignore_global
 
 [credential]
 helper = osxkeychain
