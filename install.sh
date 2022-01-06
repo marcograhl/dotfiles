@@ -15,3 +15,4 @@ ln -s $(pwd)/.gitconfig-github $HOME/.gitconfig-github
 
 mkdir -p $HOME/.config/coc
 vim -Es -u $HOME/.vimrc -c "PlugInstall | qa"
+vim -Es -u $HOME/.vimrc -c "CocInstall | qa"
