@@ -64,6 +64,7 @@ set softtabstop=2
 set expandtab
 set shiftwidth=2
 set autoindent
+set mouse=a
 set number
 set completeopt=longest,menuone
 set showcmd
@@ -74,28 +75,6 @@ set showmatch
 set incsearch
 set hlsearch
 set textwidth=80
-
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
-
-nmap <silent> <leader>lp <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>ln <Plug>(coc-diagnostic-next)
-
-nmap <silent> <leader>ld <Plug>(coc-definition)
-nmap <silent> <leader>lt <Plug>(coc-type-definition)
-nmap <silent> <leader>li <Plug>(coc-implementation)
-nmap <silent> <leader>lf <Plug>(coc-references)
-
-nmap <leader>lr <Plug>(coc-rename)
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if &filetype == 'vim'
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-autocmd CursorHold * silent call CocActionAsync('highlight')
