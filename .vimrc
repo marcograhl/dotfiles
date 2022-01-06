@@ -10,8 +10,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'miyakogi/conoline.vim'
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-  Plug 'rhysd/vim-crystal'
-  Plug 'rust-lang/rust.vim'
   Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
@@ -29,7 +27,7 @@ syntax on
 
 let mapleader=","
 
-let g:coc_global_extensions=['coc-emoji', 'coc-eslint', 'coc-prettier', 'coc-solargraph', 'coc-yaml', 'coc-sh', 'coc-go', 'coc-git', 'coc-fzf-preview', 'coc-rls', 'coc-spell-checker', 'coc-sql', 'coc-texlab', 'coc-graphql' ]
+let g:coc_global_extensions=['coc-eslint', 'coc-prettier', 'coc-solargraph', 'coc-yaml', 'coc-sh', 'coc-go', 'coc-git', 'coc-fzf-preview', 'coc-spell-checker', 'coc-sql', 'coc-texlab', 'coc-graphql' ]
 let g:terraform_fmt_on_save=1
 
 augroup RemoveSpaces
