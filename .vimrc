@@ -9,8 +9,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'miyakogi/conoline.vim'
-  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'scrooloose/nerdtree'
+  Plug 'sbdchd/neoformat'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
@@ -27,8 +27,12 @@ syntax on
 
 let mapleader=","
 
-let g:coc_global_extensions=['coc-eslint', 'coc-prettier', 'coc-solargraph', 'coc-yaml', 'coc-sh', 'coc-go', 'coc-git', 'coc-fzf-preview', 'coc-spell-checker', 'coc-sql', 'coc-texlab', 'coc-graphql' ]
 let g:terraform_fmt_on_save=1
+
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
 
 augroup RemoveSpaces
   autocmd!

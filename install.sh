@@ -13,6 +13,4 @@ ln -s $(pwd)/.gitignore_global $HOME/.gitignore_global
 ln -s $(pwd)/.gitconfig $HOME/.gitconfig
 ln -s $(pwd)/.gitconfig-github $HOME/.gitconfig-github
 
-mkdir -p $HOME/.config/coc
 vim -Es -u $HOME/.vimrc -c "PlugInstall | qa"
-vim -Es -u $HOME/.vimrc -c "CocInstall | qa"
