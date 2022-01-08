@@ -1,16 +1,15 @@
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
-  Plug 'arcticicestudio/nord-vim'
   Plug 'ervandew/supertab'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'hashivim/vim-terraform'
-  Plug 'jacoborus/tender.vim'
   Plug 'jremmen/vim-ripgrep'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'junegunn/fzf.vim'
   Plug 'miyakogi/conoline.vim'
-  Plug 'scrooloose/nerdtree'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'sbdchd/neoformat'
+  Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
@@ -20,19 +19,19 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-ruby/vim-ruby'
-  Plug 'wadackel/vim-dogrun'
 call plug#end()
 
-syntax on
+let g:neoformat_only_msg_on_error = 1
 
-let mapleader=","
-
-let g:terraform_fmt_on_save=1
-
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", 
+  highlight = {
+    enable = true,             
+    disable = { "c", "rust" },
+  },
+}
+EOF
 
 augroup RemoveSpaces
   autocmd!
@@ -43,7 +42,20 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-noremap <c-p> :FZF<cr>
+
+nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <leader>g <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Wq wq
+cnoreabbrev WQ wq
+
+nmap <leader>f :set hlsearch<cr>:Rg<space>
+nmap <leader>n :NERDTreeToggle<CR>
+nmap <Leader>r :NERDTreeFocus<cr> \| R
 
 cnoreabbrev W w
 cnoreabbrev Q q
