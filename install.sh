@@ -11,21 +11,9 @@ exec > >(tee -i $HOME/dotfiles_install.log)
 exec 2>&1
 set -x
 
-PACKAGES_NEEDED="\
-    fzf \
-    neovim \
-    tmux \
-    fd"
-
 sudo add-apt-repository -y ppa:neovim-ppa/stable
-
-if ! dpkg -s ${PACKAGES_NEEDED} > /dev/null 2>&1; then
-    if [ ! -d "/var/lib/apt/lists" ] || [ "$(ls /var/lib/apt/lists/ | wc -l)" = "0" ]; then
-        sudo apt-get update
-    fi
-    sudo apt-get -y -q install ${PACKAGES_NEEDED}
-fi
-
+sudo apt-get update
+sudo apt-get -y install fzf neovim tmux fd
 sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat ripgrep
 
 npm install -g \
