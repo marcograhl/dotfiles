@@ -13,7 +13,7 @@ set -x
 
 sudo add-apt-repository -y ppa:neovim-ppa/stable
 sudo apt-get update
-sudo apt-get -y install fzf neovim tmux fd
+sudo apt-get -y install fzf neovim tmux fd-find
 sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat ripgrep
 
 npm install -g \
