@@ -1,3 +1,5 @@
+let mapleader = ','
+
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'ervandew/supertab'
@@ -47,15 +49,6 @@ nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <leader>g <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Wq wq
-cnoreabbrev WQ wq
-
-nmap <leader>f :set hlsearch<cr>:Rg<space>
-nmap <leader>n :NERDTreeToggle<CR>
-nmap <Leader>r :NERDTreeFocus<cr> \| R
 
 cnoreabbrev W w
 cnoreabbrev Q q
