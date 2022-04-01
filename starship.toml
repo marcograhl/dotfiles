@@ -1,23 +1,19 @@
-format = """
-$username\
-$hostname\
-$directory\
-$git_branch\
-$ruby\
-$rust\
-$terraform\
-$line_break\
-$character"""
-
-[username]
-show_always = true
+format = "$username$hostname$directory$git_branch$line_break$character"
 
 [hostname]
 ssh_only = false
+format = "[$hostname](yellow) in "
+
+[username]
+show_always = true
+format = "[$user](yellow) at "
 
 [directory]
 truncation_length = 0
 truncate_to_repo = false
+
+[git_status]
+disabled = true
 
 [git_branch]
 symbol = ""

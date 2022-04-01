@@ -1,3 +1,4 @@
+eval $(/opt/homebrew/bin/brew shellenv)
 export RBENV_ROOT="$HOME/.rbenv"
 export GOPATH=$HOME/go
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$HOME/.cargo/bin:$PATH
@@ -35,7 +36,6 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(rbenv init -)"
 
 eval "$(starship init zsh)"

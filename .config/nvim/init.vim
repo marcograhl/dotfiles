@@ -4,12 +4,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'ervandew/supertab'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'github/copilot.vim'
   Plug 'hashivim/vim-terraform'
   Plug 'jremmen/vim-ripgrep'
   Plug 'miyakogi/conoline.vim'
+  Plug 'neovim/nvim-lspconfig'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
-  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'sbdchd/neoformat'
   Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-commentary'
@@ -27,13 +29,21 @@ let g:neoformat_only_msg_on_error = 1
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", 
+  ensure_installed = "maintained",
   highlight = {
-    enable = true,             
-    disable = { "c", "rust" },
+    enable = true,
+    disable = {},
   },
+  indent = {
+    enable = false,
+    disable = {}
+  }
 }
 EOF
+
+lua require'lspconfig'.gopls.setup{}
+lua require'lspconfig'.graphql.setup{}
+lua require'lspconfig'.solargraph.setup{}
 
 augroup RemoveSpaces
   autocmd!
