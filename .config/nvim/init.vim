@@ -2,6 +2,7 @@ let mapleader = ','
 
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
+  Plug 'arcticicestudio/nord-vim'
   Plug 'ervandew/supertab'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'github/copilot.vim'
@@ -10,6 +11,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'miyakogi/conoline.vim'
   Plug 'neovim/nvim-lspconfig'
   Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-lualine/lualine.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'sbdchd/neoformat'
@@ -21,7 +23,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-rhubarb'
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-surround'
-  Plug 'vim-airline/vim-airline'
   Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
@@ -39,11 +40,17 @@ require'nvim-treesitter.configs'.setup {
     disable = {}
   }
 }
-EOF
 
-lua require'lspconfig'.gopls.setup{}
-lua require'lspconfig'.graphql.setup{}
-lua require'lspconfig'.solargraph.setup{}
+require('lualine').setup {
+  options = {
+    theme = "nord"
+  }
+}
+
+require('lspconfig').gopls.setup{}
+require('lspconfig').graphql.setup{}
+require('lspconfig').solargraph.setup{}
+EOF
 
 augroup RemoveSpaces
   autocmd!
@@ -70,7 +77,6 @@ nmap <leader>n :NERDTreeToggle<CR>
 nmap <Leader>r :NERDTreeFocus<cr> \| R
 
 colorscheme nord
-let g:lightline_theme = 'nord'
 
 set background=dark
 set tabstop=2

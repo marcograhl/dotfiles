@@ -2,18 +2,20 @@ format = "$username$hostname$directory$git_branch$line_break$character"
 
 [hostname]
 ssh_only = false
-format = "[$hostname](yellow) in "
+format = "[$hostname](blue) in "
 
 [username]
 show_always = true
-format = "[$user](yellow) at "
+format = "[$user](blue) at "
 
 [directory]
 truncation_length = 0
 truncate_to_repo = false
+format = "[$path](blue)"
 
 [git_status]
 disabled = true
 
 [git_branch]
 symbol = ""
+format = " on [$branch](blue)"
