@@ -8,14 +8,18 @@ call plug#begin('~/.vim/plugged')
   Plug 'github/copilot.vim'
   Plug 'hashivim/vim-terraform'
   Plug 'jremmen/vim-ripgrep'
+  Plug 'kyazdani42/nvim-web-devicons'
   Plug 'miyakogi/conoline.vim'
   Plug 'neovim/nvim-lspconfig'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope-fzy-native.nvim', { 'do': 'git submodule update --init --recursive' }
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  Plug 'pwntester/octo.nvim'
   Plug 'sbdchd/neoformat'
   Plug 'scrooloose/nerdtree'
+  Plug 'sebdah/vim-delve'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
