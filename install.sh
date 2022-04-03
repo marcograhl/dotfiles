@@ -24,8 +24,11 @@ else
   gem install solargraph
 fi
 
+mkdir -p ~/.tmux/plugins/
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 mkdir -p ~/.config/nvim/autoload/
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
 ln -sf $(pwd)/.config/nvim/init.vim $HOME/.config/nvim/init.vim
 ln -sf $(pwd)/.gitignore_global $HOME/.gitignore_global
