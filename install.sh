@@ -9,10 +9,12 @@ if [[ -z "${CODESPACES}" ]]; then
   brew bundle
 else
   echo "==> installing dotfiles in codespace"
+  sudo apt-get update
+  sudo apt-get install -y software-properties-common
   sudo add-apt-repository -y ppa:neovim-ppa/stable
   sudo apt-get update
-  sudo apt-get -y install fd-find neovim ripgrep tmux
-  sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat ripgrep
+  sudo apt-get -y install python-dev python-pip python3-dev python3-pip
+  sudo apt-get -y install bat fd-find neovim ripgrep tmux npm python
 
   npm install -g \
     typescript \
