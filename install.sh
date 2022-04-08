@@ -13,17 +13,8 @@ else
   sudo apt-get install -y software-properties-common
   sudo add-apt-repository -y ppa:neovim-ppa/stable
   sudo apt-get update
-  sudo apt-get -y install python-dev python-pip python3-dev python3-pip
-  sudo apt-get -y install bat fd-find neovim ripgrep tmux npm python
-
-  npm install -g \
-    typescript \
-    prettier \
-    eslint \
-    typescript-language-server \
-    bash-language-server
-
-  gem install solargraph
+  sudo apt-get -y install fd-find neovim python3-dev python3-pip tmux zsh
+  sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat ripgrep
 fi
 
 mkdir -p ~/.tmux/plugins/
