@@ -10,16 +10,14 @@ if [[ -z "${CODESPACES}" ]]; then
 else
   echo "==> installing dotfiles in codespace"
   sudo apt-get update
-  if command -v brew >/dev/null 2>&1; then
-    brew install neovim
-  else
-    sudo apt-get install -y software-properties-common
-    sudo add-apt-repository -y ppa:neovim-ppa/stable
-    sudo apt-get update
-    sudo apt-get -y install neovim
-  fi
   sudo apt-get -y install fd-find python3-dev python3-pip tmux
   sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat ripgrep
+  pip3 install --user pynvim
+  curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+  chmod u+x nvim.appimage
+  ./nvim.appimage --appimage-extract
+  ./squashfs-root/AppRun --version
+  sudo mv squashfs-root / && ln -s /squashfs-root/AppRun $HOME/.local/bin/nvim
 fi
 
 mkdir -p ~/.tmux/plugins/
