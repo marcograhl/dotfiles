@@ -17,7 +17,7 @@ else
   chmod u+x nvim.appimage
   ./nvim.appimage --appimage-extract
   ./squashfs-root/AppRun --version
-  sudo mv squashfs-root / && ln -s /squashfs-root/AppRun $HOME/.local/bin/nvim
+  sudo mv squashfs-root / && mkdir -p $HOME/.local/bin/ && ln -s /squashfs-root/AppRun $HOME/.local/bin/nvim
 fi
 
 mkdir -p ~/.tmux/plugins/
