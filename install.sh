@@ -18,7 +18,7 @@ else
     sudo apt-get update
     sudo apt-get -y install neovim
   fi
-  sudo apt-get -y install fd-find python3-dev python3-pip tmux zsh
+  sudo apt-get -y install fd-find python3-dev python3-pip tmux
   sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat ripgrep
 fi
 
@@ -35,5 +35,3 @@ ln -sf $(pwd)/.gitconfig-github $HOME/.gitconfig-github
 ln -sf $(pwd)/starship.toml $HOME/.config/starship.toml
 
 nvim --headless +PlugInstall +qa
-
-sudo chsh -s "$(which zsh)" "$(whoami)"
