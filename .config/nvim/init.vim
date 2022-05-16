@@ -34,7 +34,7 @@ let g:neoformat_only_msg_on_error = 1
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
+  ensure_installed = { "bash", "javascript", "ruby", "typescript" }
   highlight = {
     enable = true,
     disable = {},
