@@ -32,4 +32,9 @@ ln -sf $(pwd)/.gitconfig $HOME/.gitconfig
 ln -sf $(pwd)/.gitconfig-github $HOME/.gitconfig-github
 ln -sf $(pwd)/starship.toml $HOME/.config/starship.toml
 
+if [ -d "/workspaces/github" ]
+then
+  git -C /workspaces/github config gpg.program /.codespaces/bin/gh-gpgsign
+fi
+
 nvim --headless +PlugInstall +qa
