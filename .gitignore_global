@@ -9,3 +9,4 @@ _book
 .vscode
 *.tfstate*
 __latexindent*.tex
+*Brewfile.lock.json*

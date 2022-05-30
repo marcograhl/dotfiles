@@ -6,9 +6,6 @@ gpgsign = true
 editor = vim
 excludesfile = ~/.gitignore_global
 
-[credential]
-helper = osxkeychain
-
 [github]
 user = issyl0
 

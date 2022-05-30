@@ -32,8 +32,15 @@ ln -sf $(pwd)/.gitconfig $HOME/.gitconfig
 ln -sf $(pwd)/.gitconfig-github $HOME/.gitconfig-github
 ln -sf $(pwd)/starship.toml $HOME/.config/starship.toml
 
-if [ -d "/workspaces/github" ]
-then
+if [[ -z "${CODESPACES}" ]]; then
+  echo "not on Codespaces, don't need to unset git config for GPG signing"
+else
+  git config --file ~/.gitconfig --unset user.email
+  git config --file ~/.gitconfig --unset user.signingkey
+  git config --file ~/.gitconfig --unset gpg.program
+fi
+
+if [ -d "/workspaces/github" ]; then
   git -C /workspaces/github config gpg.program /.codespaces/bin/gh-gpgsign
 fi
 
