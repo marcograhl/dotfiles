@@ -34,13 +34,13 @@ let g:neoformat_only_msg_on_error = 1
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "bash", "go", "javascript", "ruby", "typescript" },
+  ensure_installed = { "go", "ruby" },
   highlight = {
     enable = true,
     disable = {},
   },
   indent = {
-    enable = false,
+    enable = true,
     disable = {}
   }
 }
@@ -52,8 +52,8 @@ require('lualine').setup {
 }
 
 require('lspconfig').gopls.setup{}
-require('lspconfig').graphql.setup{}
 require('lspconfig').solargraph.setup{}
+require('lspconfig').sorbet.setup{}
 EOF
 
 augroup RemoveSpaces
