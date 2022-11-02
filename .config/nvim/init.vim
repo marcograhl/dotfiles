@@ -76,6 +76,12 @@ cnoreabbrev Q q
 cnoreabbrev Wq wq
 cnoreabbrev WQ wq
 
+let g:clipboard = {"name": "rdm", "copy": {}, "paste": {}}
+let g:clipboard.copy["+"] = ["rdm", "copy"]
+let g:clipboard.paste["+"] = ["rdm", "paste"]
+let g:clipboard.copy["*"] = ["rdm", "copy"]
+let g:clipboard.paste["*"] = ["rdm", "paste"]
+
 nmap <leader>f :set hlsearch<cr>:Rg<space>
 nmap <leader>n :NERDTreeToggle<CR>
 nmap <Leader>r :NERDTreeFocus<cr> \| R
