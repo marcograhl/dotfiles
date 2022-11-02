@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzy-native.nvim', { 'do': 'git submodule update --init --recursive' }
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  Plug 'ojroques/vim-oscyank', {'branch': 'main'}
   Plug 'pwntester/octo.nvim'
   Plug 'sbdchd/neoformat'
   Plug 'scrooloose/nerdtree'
@@ -70,6 +71,9 @@ nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <leader>g <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+vnoremap <leader>c :OSCYank<CR>
+nmap <leader>o <Plug>OSCYank
 
 cnoreabbrev W w
 cnoreabbrev Q q
