@@ -29,6 +29,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-surround'
   Plug 'vim-ruby/vim-ruby'
+  Plug 'williamboman/mason.nvim'
+  Plug 'williamboman/mason-lspconfig.nvim'
 call plug#end()
 
 let g:neoformat_only_msg_on_error = 1
@@ -46,15 +48,18 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
-require('lualine').setup {
+require'lualine'.setup {
   options = {
     theme = "nord"
   }
 }
 
-require('lspconfig').gopls.setup{}
-require('lspconfig').solargraph.setup{}
-require('lspconfig').sorbet.setup{}
+require'mason'.setup{}
+require'mason-lspconfig'.setup{}
+require'lspconfig'.gopls.setup{}
+require'lspconfig'.sorbet.setup{
+  cmd = { "bin/srb", "tc", "--lsp" }
+}
 EOF
 
 augroup RemoveSpaces
