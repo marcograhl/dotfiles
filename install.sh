@@ -19,7 +19,7 @@ sudo mv nvim.appimage /usr/local/bin/nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-mkdir -p $(pwd)/.config/nvim/
+mkdir -p $HOME/.config/nvim/
 ln -sf $(pwd)/.config/nvim/init.lua $HOME/.config/nvim/init.lua
 ln -sf $(pwd)/.gitignore_global $HOME/.gitignore_global
 
