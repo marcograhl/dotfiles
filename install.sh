@@ -7,7 +7,9 @@ set -x
 sudo apt-get update
 sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat
 
-
+sudo apt-get install ripgrep
+sudo apt install fzf
+sudo apt-get install -y tmux
 sudo apt-get install fuse libfuse2
 sudo modprobe fuse
 sudo groupadd fuse
