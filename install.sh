@@ -3,13 +3,13 @@
 exec > >(tee -i $HOME/dotfiles_install.log)
 exec 2>&1
 set -x
+sudo apt-get install -y tmux
 
 sudo apt-get update
 sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat
 
 sudo apt-get install ripgrep
 sudo apt install fzf
-sudo apt-get install -y tmux
 sudo apt-get install fuse libfuse2
 sudo modprobe fuse
 sudo groupadd fuse
@@ -26,5 +26,6 @@ ln -sf $(pwd)/.config/nvim/init.lua $HOME/.config/nvim/init.lua
 ln -sf $(pwd)/.gitignore_global $HOME/.gitignore_global
 ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
 
+tmux source-file ~/.tmux.conf
 # Auto install packer plugins to avoid yelling errors on first boot
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
