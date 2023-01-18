@@ -4,16 +4,17 @@ exec > >(tee -i $HOME/dotfiles_install.log)
 exec 2>&1
 set -x
 
-
+sudo apt-get update
 sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat
 
+
+sudo apt-get install fuse libfuse2
 sudo modprobe fuse
 sudo groupadd fuse
 sudo usermod -a -G fuse "$(whoami)"
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 sudo chmod u+x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
-sudo apt install fuse
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
