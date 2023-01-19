@@ -11,6 +11,8 @@ sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat
 sudo apt-get install ripgrep
 sudo apt install fzf
 sudo apt-get install fuse libfuse2
+apt-get install wget libnss3-tools
+wget https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64
 sudo modprobe fuse
 sudo groupadd fuse
 sudo usermod -a -G fuse "$(whoami)"
@@ -20,7 +22,8 @@ sudo mv nvim.appimage /usr/local/bin/nvim
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
+mv mkcert-v1.4.3-linux-amd64 /usr/bin/mkcert
+chmod +x /usr/bin/mkcert
 mkdir -p $HOME/.config/nvim/
 ln -sf $(pwd)/.config/nvim/init.lua $HOME/.config/nvim/init.lua
 ln -sf $(pwd)/.gitignore_global $HOME/.gitignore_global
