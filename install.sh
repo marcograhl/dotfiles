@@ -20,15 +20,15 @@ curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 sudo chmod u+x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
 
-sudo wget -O mkcert -P /usr/bin https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkce
+sudo wget -O mkcert https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkce
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-sudo chmod +x /usr/bin/mkcert
 mkdir -p $HOME/.config/nvim/
 ln -sf $(pwd)/.config/nvim/init.lua $HOME/.config/nvim/init.lua
 ln -sf $(pwd)/.gitignore_global $HOME/.gitignore_global
 ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
-
+sudo mv $(pwd)/mkcert /usr/bin
+sudo chmod +x /usr/bin/mkcert
 tmux source-file ~/.tmux.conf
 # Auto install packer plugins to avoid yelling errors on first boot
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
