@@ -8,11 +8,10 @@ sudo apt-get install -y tmux
 sudo apt-get update
 sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat
 
+apt-get install wget libnss3-tools
 sudo apt-get install ripgrep
 sudo apt install fzf
 sudo apt-get install fuse libfuse2
-apt-get install wget libnss3-tools
-sudo wget -O mkcert -P /usr/bin https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkce
 rt-v1.4.3-linux-amd64
 sudo modprobe fuse
 sudo groupadd fuse
@@ -21,6 +20,7 @@ curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 sudo chmod u+x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
 
+sudo wget -O mkcert -P /usr/bin https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkce
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 sudo chmod +x /usr/bin/mkcert
