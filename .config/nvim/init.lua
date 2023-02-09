@@ -44,6 +44,16 @@ require('packer').startup(function(use)
   }
   use 'virchau13/tree-sitter-astro'
   use 'wuelnerdotexe/vim-astro'
+  use({
+  "roobert/tailwindcss-colorizer-cmp.nvim",
+  -- optionally, override the default options:
+  config = function()
+    require("tailwindcss-colorizer-cmp").setup({
+      color_square_width = 2,
+    })
+  end
+})
+  use 'NvChad/nvim-colorizer.lua'
   -- Git related plugins
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
@@ -93,7 +103,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   group = packer_group,
   pattern = vim.fn.expand '$MYVIMRC',
 })
-
+require 'colorizer'.setup()
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
