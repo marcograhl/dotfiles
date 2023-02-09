@@ -24,7 +24,9 @@ sudo wget -O mkcert https://github.com/FiloSottile/mkcert/releases/download/v1.4
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 mkdir -p $HOME/.config/nvim/
+mkdir -p $HOME/.config/nvim/ftdetect
 ln -sf $(pwd)/.config/nvim/init.lua $HOME/.config/nvim/init.lua
+ln -sf $(pwd)/.config/nvim/ftdetect/astro.lua $HOME/.config/nvim/ftdetect/astro.lua
 ln -sf $(pwd)/.gitignore_global $HOME/.gitignore_global
 ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
 sudo mv $(pwd)/mkcert /usr/bin
